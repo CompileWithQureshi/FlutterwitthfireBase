@@ -3,19 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_pages/loginPage.dart';
-import 'package:login_pages/loginSucess.dart';
+import 'package:login_pages/LoginSucess.dart';
+import 'package:login_pages/util/Text_Color.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      home: Loginsucess(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
           child: Text(
             'first Project',
             style: GoogleFonts.acme(
-              color: Colors.pink,
+              color: TextColor,
               fontWeight: FontWeight.bold,
               fontSize: 30,
             ),
@@ -48,7 +49,7 @@ class HomePage extends StatelessWidget {
           decoration: BoxDecoration(
             // color: Colors.pink,
             border: Border.all(
-              color: Color.fromARGB(255, 252, 83, 139),
+              color: BrColor,
               width: 3,
             ),
             borderRadius: BorderRadius.only(
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.pink[300]),
+                      color: heading),
                 ),
                 UserInput(
                   name: 'Username',
@@ -85,7 +86,7 @@ class HomePage extends StatelessWidget {
                       textStyle: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
-                        color: Colors.pink[300],
+                        color: heading,
                       ),
                     ),
                   ),
@@ -95,26 +96,19 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Loginsucess(
-                            name: 'sajid',
-                            age: 20,
-                          ),
+                          builder: (context) => Loginsucess(),
                         ));
                   },
                   child: Text(
                     'Click here',
                     style: TextStyle(
-                      color: Colors.pink[300],
+                      color: heading,
                     ),
                   ),
                 ),
                 Text_field(
                   text: 'or',
-                  textStyle: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink[300],
-                  ),
+                  textStyle: textStyle,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
