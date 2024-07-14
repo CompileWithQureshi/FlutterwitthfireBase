@@ -27,7 +27,7 @@ class UserInput extends StatelessWidget {
             height: 5,
           ),
           TextField(
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.name,
             autofocus: true,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
