@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:login_pages/login_page.dart';
 import 'package:login_pages/LoginSucess.dart';
 import 'package:login_pages/util/Text_Color.dart';
@@ -28,20 +28,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   title: Padding(
-      //     padding: const EdgeInsets.all(8.0),
-      //     child: Text(
-      //       'first Project',
-      //       style: GoogleFonts.acme(
-      //         color: TextColor,
-      //         fontWeight: FontWeight.bold,
-      //         fontSize: 30,
-      //       ),
-      //     ),
-      //   ),
-      // ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'first Project',
+            style: GoogleFonts.acme(
+              color: TextColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
+          ),
+        ),
+      ),
       body: Center(
         child: Container(
           width: 300,

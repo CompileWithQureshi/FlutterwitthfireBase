@@ -3,8 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:login_pages/models/emojiScreen.dart';
+import 'package:login_pages/util/griddeView.dart';
 import 'package:login_pages/util/mainColumn.dart';
 import 'package:login_pages/util/Text_Color.dart';
+import 'package:login_pages/util/mainRow.dart';
 
 class Loginsucess extends StatefulWidget {
   Loginsucess({super.key});
@@ -27,37 +29,54 @@ class _LoginsucessState extends State<Loginsucess> {
 
   @override
   Widget build(BuildContext context) {
+    // final heightS = MediaQuery.sizeOf(context).height;
+    final widthS = MediaQuery.sizeOf(context).width;
+
     _getCatogry();
     return Scaffold(
       appBar: AppBar(
         title: Text('Secound screens'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Column, Row, List View Builder ',
-            style: textStyle,
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          MainRow(),
-          SizedBox(
-            height: 50,
-          ),
-          Row(
+      body: Container(
+        // height: heightS,
+        width: widthS,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Maincolumn(),
-              SizedBox(
-                width: 50,
+              Text(
+                'Column, Row, List View Builder ',
+                style: textStyle,
               ),
-              emojiColumn()
+              SizedBox(
+                height: 50,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Mainrow(),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Maincolumn(),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  emojiColumn(),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
+              )
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
@@ -102,7 +121,7 @@ class _LoginsucessState extends State<Loginsucess> {
                         Text(
                           emojis[index].name,
                           style: textStyle,
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -114,71 +133,4 @@ class _LoginsucessState extends State<Loginsucess> {
       ],
     );
   }
-}
-
-Row MainRow() {
-  return Row(
-    children: [
-      Text(
-        'Row',
-        style: textStyle,
-      ),
-      Container(
-        margin: EdgeInsets.symmetric(horizontal: 10),
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black, width: 2),
-        ),
-        child: Center(
-          child: Text(
-            '1',
-            style: textStyle,
-          ),
-        ),
-      ),
-      Container(
-        margin: EdgeInsets.symmetric(horizontal: 10),
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black, width: 2),
-        ),
-        child: Center(
-          child: Text(
-            '2',
-            style: textStyle,
-          ),
-        ),
-      ),
-      Container(
-        margin: EdgeInsets.symmetric(horizontal: 10),
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black, width: 2),
-        ),
-        child: Center(
-          child: Text(
-            '3',
-            style: textStyle,
-          ),
-        ),
-      ),
-      Container(
-        margin: EdgeInsets.symmetric(horizontal: 10),
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black, width: 2),
-        ),
-        child: Center(
-          child: Text(
-            '4',
-            style: textStyle,
-          ),
-        ),
-      ),
-    ],
-  );
 }
